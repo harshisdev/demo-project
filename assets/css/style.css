@@ -40,7 +40,7 @@ body {
 .navbar-brand img {
   width: 30px;
 }
-.nav-link:hover{
+.nav-link:hover {
   color: var(--black-color) !important;
   text-decoration: underline !important;
 }
@@ -160,9 +160,9 @@ a:hover {
 }
 
 /* Get Startet Button */
-.btn:focus{
+.btn:focus {
   box-shadow: none !important;
-} 
+}
 .get-started-btn {
   margin-left: 25px;
   background: var(--primary-color);
@@ -1357,7 +1357,112 @@ section {
 }
 .img-center {
   max-width: 130px;
+}
+* social media footer */ .socialfooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--footer-background);
+  border-bottom: 1px solid var(--gray-color);
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+#social-footer li:first-child a {
+  border-top-left-radius: 5px;
+}
+#social-footer li:last-child a {
+  border-top-right-radius: 5px;
+}
 
+#social-footer a {
+  /* background: rgba(43, 42, 42, 0.7); */
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  font-size: 2rem;
+  line-height: 50px;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+#social-footer a:hover span {
+  left: -20%;
+  top: -45px;
+  opacity: 1;
+  z-index: 999;
+  transform: rotate(-90deg);
+}
+#social-footer a span {
+  font: 12px "Open Sans", sans-serif;
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 24px;
+  left: -100%;
+  margin-top: -16px;
+  opacity: 0;
+  padding: 4px 8px;
+  position: absolute;
+  transition: opacity 0.3s, left 0.4s;
+  top: 50%;
+  z-index: -1;
+}
+
+#social-footer a span:before {
+  content: "";
+  display: block;
+  height: 8px;
+  width: 8px;
+  left: -4px;
+  margin-top: -4px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+#social-footer a[class*="twitter"]:hover,
+#social-footer a[class*="twitter"] span,
+#social-footer a[class*="twitter"] span:before {
+  background: #075e54;
+}
+
+#social-footer a[class*="facebook"]:hover,
+#social-footer a[class*="facebook"] span,
+#social-footer a[class*="facebook"] span:before {
+  background: #3b5998;
+}
+
+#social-footer a[class*="gplus"]:hover,
+#social-footer a[class*="gplus"] span,
+#social-footer a[class*="gplus"] span:before {
+  background: #e34429;
+}
+
+#social-footer a[class*="dribbble"]:hover,
+#social-footer a[class*="dribbble"] span,
+#social-footer a[class*="dribbble"] span:before {
+  background: #0072b1;
+}
+
+#social-footer a[class*="dropbox"]:hover,
+#social-footer a[class*="dropbox"] span,
+#social-footer a[class*="dropbox"] span:before {
+  background: #3d9ae8;
+}
+
+#social-footer a[class*="github"]:hover,
+#social-footer a[class*="github"] span,
+#social-footer a[class*="github"] span:before {
+  background: #6e5494;
+}
+
+#social-footer a[class*="evernote"]:hover,
+#social-footer a[class*="evernote"] span,
+#social-footer a[class*="evernote"] span:before {
+  background: #6bb130;
 }
 /* soical media */
 ul li {
@@ -1451,7 +1556,7 @@ ul li {
 #social-sidebar a[class*="dropbox"]:hover,
 #social-sidebar a[class*="dropbox"] span,
 #social-sidebar a[class*="dropbox"] span:before {
-  background: #3d9ae8 ;
+  background: #3d9ae8;
 }
 
 #social-sidebar a[class*="github"]:hover,
@@ -1464,4 +1569,14 @@ ul li {
 #social-sidebar a[class*="evernote"] span,
 #social-sidebar a[class*="evernote"] span:before {
   background: #6bb130;
+}
+@media only screen and (max-width: 700px) {
+  #social-sidebar {
+    display: none;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .socialfooter {
+    display: none !important;
+  }
 }
