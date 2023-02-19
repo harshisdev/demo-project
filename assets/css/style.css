@@ -10,7 +10,6 @@
 @import url(./swiper-bundle.min.css);
 @import url(./normalize.css);
 @import url(./font-family.css);
-@import url(./animate.min.css);
 
 :root {
   --primary-color: #02cd66;
@@ -325,9 +324,10 @@ a:hover {
   .mobile-nav-toggle {
     display: block;
   }
-
-  .navbar ul {
-    display: none;
+}
+@media (max-width: 500px) {
+  .nav-link {
+    padding: 10px;
   }
 }
 .navbar-mobile {
@@ -716,13 +716,11 @@ section {
 .btn {
   color: var(--primary-color);
   border-color: var(--primary-color);
-  transition: all ease-in-out 0.5s;
 }
 .btn:hover {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: var(--white-color);
-  transition: all ease-in-out 0.5s;
 }
 .cta h3 {
   color: var(--white-color);
@@ -1358,20 +1356,17 @@ section {
 .img-center {
   max-width: 130px;
 }
-* social media footer */ .socialfooter {
+/* social media footer */
+.socialfooter {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--footer-background);
-  border-bottom: 1px solid var(--gray-color);
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
 }
-#social-footer li:first-child a {
-  border-top-left-radius: 5px;
-}
-#social-footer li:last-child a {
-  border-top-right-radius: 5px;
+#social-footer li a {
+  border-radius: 5px;
 }
 
 #social-footer a {
@@ -1464,7 +1459,8 @@ section {
 #social-footer a[class*="evernote"] span:before {
   background: #6bb130;
 }
-/* soical media */
+
+/* social media */
 ul li {
   list-style: none;
 }
@@ -1475,6 +1471,7 @@ ul li {
   left: -32px;
   position: fixed;
   top: 25%;
+  z-index: 999;
 }
 #social-sidebar li:first-child a {
   border-top-right-radius: 5px;
@@ -1570,9 +1567,23 @@ ul li {
 #social-sidebar a[class*="evernote"] span:before {
   background: #6bb130;
 }
+
 @media only screen and (max-width: 700px) {
   #social-sidebar {
     display: none;
+  }
+  #footer{
+    margin-bottom: 46px;
+    border-bottom: 1px solid var(--white-color);
+  }
+  .socialfooter{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+  }
+  #social-footer a{
+    height: 30px;
   }
 }
 @media only screen and (min-width: 700px) {
