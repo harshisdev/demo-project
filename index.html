@@ -15,6 +15,14 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
     <!--  Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <style>
+      .form-group > label {
+        color: red;
+      }
+    </style>
   </head>
 
   <body>
@@ -309,22 +317,31 @@
                     <div class="col-md-6 form-group">
                       <input
                         type="text"
-                        name="name"
+                        name="username"
                         class="form-control"
-                        id="name"
+                        id="usernames"
                         placeholder="Your Name"
                         required
                       />
+                      <label id="usercheck" for="Name"
+                        >Please Enter Your Valid Name.</label
+                      >
                     </div>
                     <div class="col-md-6 form-group mt-3 mt-md-0">
                       <input
-                        type="email"
                         class="form-control"
+                        type="email"
                         name="email"
                         id="email"
                         placeholder="Your Email"
                         required
                       />
+                      <label
+                        id="emailvalid"
+                        class="invalid-feedback"
+                        for="email"
+                        >Please Enter Your Valid Email.</label
+                      >
                     </div>
                   </div>
                   <div class="form-group mt-3">
@@ -336,6 +353,9 @@
                       placeholder="Subject"
                       required
                     />
+                    <label id="subjectvalid" for="Subject"
+                      >Please Enter Your Valid Subject.</label
+                    >
                   </div>
                   <div class="form-group mt-3">
                     <textarea
@@ -343,8 +363,12 @@
                       name="message"
                       rows="5"
                       placeholder="Message"
+                      id="message"
                       required
                     ></textarea>
+                    <label id="messagevalid" for="message"
+                      >Please Enter Your Valid Message.</label
+                    >
                   </div>
                   <div class="text-center mt-4">
                     <button
@@ -352,6 +376,7 @@
                       data-bs-toggle="modal"
                       data-bs-target="#staticBackdrop"
                       class="btn btn-outline-danger"
+                      id="submitbtn"
                     >
                       Send Message
                     </button>
@@ -440,36 +465,38 @@
     </footer>
     <!-- End Footer -->
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="staticBackdrop"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
-      style="z-index: 9999"
-    >
-      <div class="modal-dialog" style="top: 50px;">
-        <div class="modal-content">
-          <div class="modal-header justify-content-center">
-            <img src="assets/img/favicon.png" alt="logo" />
-          </div>
-          <div class="modal-body">
-            <img
-              src="assets/img/thankyou.png"
-              class="img-fluid"
-              alt="thankyou"
-            />
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button
-              type="button"
-              class="btn btn-outline-danger"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
+    <div id="modal-popup">
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+        style="z-index: 9999"
+      >
+        <div class="modal-dialog" style="top: 50px">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center">
+              <img src="assets/img/favicon.png" alt="logo" />
+            </div>
+            <div class="modal-body">
+              <img
+                src="assets/img/thankyou.png"
+                class="img-fluid"
+                alt="thankyou"
+              />
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -522,6 +549,7 @@
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/validate.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="app.js"></script>
     <script>
       window.onscroll = function () {
         myFunction();

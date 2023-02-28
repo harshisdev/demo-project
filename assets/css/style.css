@@ -19,11 +19,17 @@
   --gray-color: #ccc;
   --gray-color1: #bbb;
   --footer-background: #2e2f38;
+  --color-error: #800000;
 }
 
 body {
   font-family: "Nunito Sans", sans-serif;
   color: var(--black-color);
+}
+
+.error{
+  color: var(--color-error);
+  padding-left: 0.75rem;
 }
 
 .sticky {
@@ -1572,17 +1578,17 @@ ul li {
   #social-sidebar {
     display: none;
   }
-  #footer{
+  #footer {
     margin-bottom: 46px;
     border-bottom: 1px solid var(--white-color);
   }
-  .socialfooter{
+  .socialfooter {
     position: fixed;
     bottom: 0px;
     right: 0px;
     left: 0px;
   }
-  #social-footer a{
+  #social-footer a {
     height: 30px;
   }
 }
