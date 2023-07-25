@@ -321,7 +321,6 @@
                         class="form-control"
                         id="usernames"
                         placeholder="Your Name"
-                        required
                       />
                       <label id="usercheck" for="Name"
                         >Please Enter Your Valid Name.</label
@@ -334,7 +333,6 @@
                         name="email"
                         id="email"
                         placeholder="Your Email"
-                        required
                       />
                       <label
                         id="emailvalid"
@@ -351,7 +349,6 @@
                       name="subject"
                       id="subject"
                       placeholder="Subject"
-                      required
                     />
                     <label id="subjectvalid" for="Subject"
                       >Please Enter Your Valid Subject.</label
@@ -364,7 +361,6 @@
                       rows="5"
                       placeholder="Message"
                       id="message"
-                      required
                     ></textarea>
                     <label id="messagevalid" for="message"
                       >Please Enter Your Valid Message.</label
@@ -373,8 +369,6 @@
                   <div class="text-center mt-4">
                     <button
                       type="submit"
-                      data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop"
                       class="btn btn-outline-danger"
                       id="submitbtn"
                     >
@@ -465,16 +459,10 @@
     </footer>
     <!-- End Footer -->
     <!-- Modal -->
-    <div id="modal-popup">
       <div
         class="modal fade"
-        id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-        style="z-index: 9999"
+        id="myModal"
+       role="dialog"
       >
         <div class="modal-dialog" style="top: 50px">
           <div class="modal-content">
@@ -500,7 +488,6 @@
           </div>
         </div>
       </div>
-    </div>
 
     <div id="preloader"></div>
     <a

@@ -261,9 +261,8 @@ $(document).ready(function () {
   // Validate Email
   const email = document.getElementById("email");
   email.addEventListener("blur", () => {
-    let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
     let s = email.value;
-    if (regex.test(s)) {
+    if (usernameValue.length == "") {
       email.classList.remove("is-invalid");
       emailError = true;
     } else {
@@ -309,34 +308,34 @@ $(document).ready(function () {
       $("#messagevalid").hide();
     }
   }
-
-  //   popup
-  //   function modalPopup() {
-  //     $("#submitbtn").click(function () {
-  //      if (){
-  //         $("#modal-popup").hide();
-  //      }else{
-  //         $("#modal-popup").show();
-  //      }
-  //     });
-  //   }
-
   // Submit button
   $("#submitbtn").click(function () {
     validateUsername();
     // validateEmail();
     validateSubject();
     validateMessage();
-    modalPopup();
-    if (
-      usernameError == true &&
-      emailError == true &&
-      subjectValid == true &&
-      messagevalue == true
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+    $(this).click(function(){
+      $("#myModal").modal("show");
+    })
+    // if (
+    //   usernameError == true &&
+    //   emailError == true &&
+    //   subjectValid == true &&
+    //   messagevalue == true
+    // ) {
+    //   return (
+    //     <>
+    //     sucessfull
+    //     </>
+    //   );
+    // } else {
+    //   return (
+    //     <>
+    //     faild
+    //     </>
+    //   );
+    // }
+   
   });
+  
 });
