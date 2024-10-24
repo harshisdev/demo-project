@@ -1241,9 +1241,7 @@ section {
   width: 100%;
   background: var(--white-color);
 }
-.contact .php-email-form .form-group {
-  padding-bottom: 8px;
-}
+
 .contact .php-email-form .error-message {
   display: none;
   color: var(--white-color);
@@ -1356,7 +1354,7 @@ section {
 #footer {
   background: var(--footer-background);
   color: var(--white-color);
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
 }
 .img-center {
@@ -1596,4 +1594,12 @@ ul li {
   .socialfooter {
     display: none !important;
   }
+}
+.btn-outline-danger span svg circle{
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
+}
+.btn-outline-danger:hover span svg circle{
+  fill: var(--white-color);
+  stroke: var(--white-color);
 }
