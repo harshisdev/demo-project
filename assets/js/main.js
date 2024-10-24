@@ -310,32 +310,9 @@ $(document).ready(function () {
   }
   // Submit button
   $("#submitbtn").click(function () {
-    validateUsername();
-    // validateEmail();
-    validateSubject();
-    validateMessage();
-    $(this).click(function(){
-      $("#myModal").modal("show");
-    })
-    // if (
-    //   usernameError == true &&
-    //   emailError == true &&
-    //   subjectValid == true &&
-    //   messagevalue == true
-    // ) {
-    //   return (
-    //     <>
-    //     sucessfull
-    //     </>
-    //   );
-    // } else {
-    //   return (
-    //     <>
-    //     faild
-    //     </>
-    //   );
-    // }
-   
+    if(validateUsername() || validateEmail() || validateSubject() || validateMessage()){
+      new bootstrap.Modal(document.getElementById('myModal')).show();
+    }   
   });
   
 });
