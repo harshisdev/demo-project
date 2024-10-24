@@ -376,10 +376,6 @@
   <script src="assets/js/main.js"></script>
   <script src="app.js"></script>
   <script>
-    window.onscroll = function () {
-      myFunction();
-    };
-
     var navbar = document.getElementById("navbarfix");
     var sticky = navbar.offsetTop;
 
@@ -391,6 +387,10 @@
       }
     }
 
+    window.onscroll = function () {
+      myFunction();
+    };
+
     function sendMessage() {
       var name = document.getElementById("usernames").value;
       var email = document.getElementById("email").value;
@@ -398,15 +398,19 @@
       var message = document.getElementById("message").value;
       if (name === "") {
         document.getElementById("usercheck").style.display = "block";
-      }else if (email === "") {
+      } else if (email === "") {
         document.getElementById("emailvalid").style.display = "block";
-      }else if (subject === "") {
+      } else if (subject === "") {
         document.getElementById("subjectvalid").style.display = "block";
-      }else if (message === "") {
+      } else if (message === "") {
         document.getElementById("messagevalid").style.display = "block";
       } else {
         document.getElementById("loader").style.display = "block";
         setTimeout(() => {
+          document.getElementById("usernames").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("subject").value = "";
+          document.getElementById("message").value = "";
           document.getElementById("loader").style.display = "none";
           new bootstrap.Modal(document.getElementById('myModal')).show()
         }, 3000);
